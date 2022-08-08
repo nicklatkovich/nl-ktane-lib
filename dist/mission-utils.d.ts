@@ -1,0 +1,16 @@
+import { BombInfo, Completion, CompletionType, MissionInfo, MissionType, ModulePool } from "./types";
+export declare function getMissionModulesCount(mission: MissionInfo): number;
+export declare function getMissionSolvers(mission: MissionInfo): Set<string>;
+export declare function getMissionTime(mission: MissionInfo): number;
+export declare function missionToBombs<T extends MissionType = MissionType>(mission: MissionInfo<T>): BombInfo<T>[];
+export declare function modulePoolToModulesCount(pool: ModulePool): number;
+export declare function getMissionType<T extends MissionType>(mission: MissionInfo<T>): T;
+export declare function isEfmOrSoloSolve(completion: Completion): completion is Completion<CompletionType.SOLO | CompletionType.EFM>;
+export declare function getSolveType<T extends CompletionType = CompletionType>(completion: Completion<T>): T;
+export declare function isGlobalTime(mission: MissionInfo): mission is MissionInfo<MissionType.FINITE_G_TIME> | MissionInfo<MissionType.FINITE_G_TIME_STRIKES>;
+export declare function isGlobalStrikes(mission: MissionInfo): mission is MissionInfo<MissionType.FINITE_G_STRIKES> | MissionInfo<MissionType.FINITE_G_TIME_STRIKES>;
+export declare function modulesPoolToModules(pool: ModulePool): Set<string>;
+export declare function getPoolModules(pool: ModulePool): string[];
+export declare function getPoolCount(pool: ModulePool): number;
+export declare function getMissionModules(mission: MissionInfo): Set<string>;
+export declare function getCompleters(completion: Completion): string[];
