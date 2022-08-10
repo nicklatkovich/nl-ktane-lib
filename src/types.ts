@@ -41,6 +41,7 @@ export type Completion<T extends CompletionType = CompletionType> = T extends an
   ? {
       time: number;
       isFirst?: true;
+      notes?: ElOrArr<string>;
     } & CompletionVerification &
       (T extends CompletionType.SOLO ? { type: T } : { type?: T }) &
       (T extends CompletionType.TEAM
